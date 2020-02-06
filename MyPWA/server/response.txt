@@ -1,0 +1,10 @@
+[{
+		"data": "Place"
+	},
+	{
+		"data": "Geography"
+	},
+	{
+		"data": "Coordinates"
+	}
+]
