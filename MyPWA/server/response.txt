@@ -8,3 +8,11 @@
 		"data": "Coordinates"
 	}
 ]
+
+<html>
+  <body>
+      <p>Place</p>
+      <p>Geography</p>
+      <p>Coordinates</p>
+  </body>
+</html>

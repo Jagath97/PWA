@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 const fileSystem = require('fs');
+const signalR = require('@aspnet/signalr');
 
-app.use((request, res, next)=>{
+app.use(bodyParser.json());
+
+app.use((request, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -15,6 +19,14 @@ app.get('/', (request, response) => {
         response.end();
     });
 
+});
+
+app.post('/api/save', (request, response) => {
+    fileSystem.appendFile('/Users/jagathkumar/PWA/MyPWA/server/data.txt', JSON.stringify(request.body), (sucess, error) => {
+        console.log(JSON.stringify(request.body));
+        response.send("Sucess");
+        response.end();
+    });
 });
 
 const PORT = process.env.PORT || 8080;

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-interface IData{
-  data:string;
+interface IData {
+  data: string;
 }
 @Component({
   selector: 'app-home',
@@ -11,12 +11,12 @@ interface IData{
 })
 export class HomeComponent implements OnInit {
 
-  data:IData[];
-  constructor(private httpClient:HttpClient) { }
+  data: IData[];
+  constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-    this.httpClient.get<IData[]>('http://localhost:8080/').subscribe(response=>{
-      this.data=response;
+    this.httpClient.get<IData[]>('http://localhost:8080/').subscribe(response => {
+      this.data = response;
     })
   }
 
